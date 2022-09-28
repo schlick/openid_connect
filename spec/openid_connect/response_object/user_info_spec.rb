@@ -49,13 +49,13 @@ describe OpenIDConnect::ResponseObject::UserInfo do
       its(:errors) { should include :base }
     end
 
-    context 'when email is invalid' do
-      let :attributes do
-        {email: 'nov@localhost'}
-      end
-      its(:valid?) { should == false }
-      its(:errors) { should include :email }
-    end
+    # context 'when email is invalid' do
+    #   let :attributes do
+    #     {email: 'nov@localhost'}
+    #   end
+    #   its(:valid?) { should == false }
+    #   its(:errors) { should include :email }
+    # end
 
     [:email_verified, :zoneinfo].each do |one_of_list|
       context "when #{one_of_list} is invalid" do
